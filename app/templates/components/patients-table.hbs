@@ -1,0 +1,34 @@
+<table class="table">
+    <thead>
+        <td>
+            <a onclick={{action "setSort" "lastName"}}>Last Name</a>
+        </td>
+        <td>
+            <a onclick={{action "setSort" "firstName"}}>First Name</a>
+        </td>
+        <td>
+            <a onclick={{action "setSort" "dateOfBirth"}}>Date of Birth</a>
+        </td>
+        <td></td>
+    </thead>
+    <tbody>
+        {{#each sortedPatients as |patient|}}
+            <tr>
+                <td>
+                    {{patient.lastName}}
+                </td>
+                <td>
+                    {{patient.firstName}}
+                </td>
+                <td>
+                    {{moment-format patient.dateOfBirth 'MM/DD/YYYY'}}
+                </td>
+                <td>
+                    {{#link-to 'patients.show' patient}}View{{/link-to}}
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{yield}}

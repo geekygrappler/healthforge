@@ -1,0 +1,53 @@
+{{patients-table patients=model}}
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {{#if previousPage}}
+            <li class="page-item">
+                {{#link-to 
+                    'patients' 
+                    (query-params page=previousPage)
+                    class="page-link"
+                }}
+                    Previous
+                {{/link-to}}
+            </li>
+        {{/if}}
+        <li class="page-item">
+            {{#link-to
+                'patients'
+                (query-params page=1)
+                class="page-link"
+            }}
+                1
+            {{/link-to}}
+        </li>
+        <li class="page-item">
+            {{#link-to
+                'patients'
+                (query-params page=2)
+                class="page-link"
+            }}
+                2
+            {{/link-to}}
+        </li>
+        <li class="page-item">
+            {{#link-to
+                'patients'
+                (query-params page=3)
+                class="page-link"
+            }}
+                3
+            {{/link-to}}
+        </li>
+        <li class="page-item">
+            {{#link-to 
+                'patients' 
+                (query-params page=nextPage)
+                class="page-link"
+            }}
+                Next
+            {{/link-to}}
+        </li>
+    </ul>
+</nav>
