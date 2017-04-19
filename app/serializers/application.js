@@ -17,22 +17,6 @@ export default DS.JSONAPISerializer.extend({
             }
         });
 
-        delete payload.content;
-        delete payload.size;
-        delete payload.sort;
-        delete payload.numberOfElements;
-        delete payload.totalElements;
-        delete payload.totalPages;
-        delete payload.number;
-        delete payload.first;
-        delete payload.last;
-        // const newData = payload.content.map((item) => {
-        //     return {
-        //         attributes: item,
-        //         type: 'patient'
-        //     }
-        // });
-
 
         return this._super(...arguments)
     },
